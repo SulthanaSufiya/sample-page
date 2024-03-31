@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <h1> Hello V0ting app</h1>
+    <p> welcome to MP elections</p>
+<img src="{% static 'image.png' %}"class="card-img-top" alt="..."><br><br><br>
+<center>
+<a href= "{% url 'signup' %}">Create account</a><br>
+<a href="{% url 'login' %}">login</a></center>
+<marquee >voting is everyone rights</marquee>
+</body>
+</html>

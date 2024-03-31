@@ -1,0 +1,61 @@
+
+<html>
+    <head>
+        <title>form</title>
+    </head>
+    <body bgcolor="#00FFFF" text="black">
+        <h1><center>Registration form</center></h1>
+        <table align="center">
+            <tr>
+                <td>
+        <form id="myForm">
+                <b><label>Enter your name:</label><br></b>
+                    <input type="text" id="name" placeholder="Enter your name" name="name"><br><br>
+
+            <b><label>Enter your email id:</label><br></b>
+                <input type="text" id="email" placeholder="Valid email id" name="email"><br><br>
+
+            <b><label for="phone">Mobile Number:</label><br></b>
+                <input type="text" id="phone"  placeholder="valid number" name="phone"><br><br>
+                <b><label for ="password">Create a password</label></b><br>
+                <input type="text" id="password" placeholder="password" name="password"><br><br>
+                <b><label for ="password">Re-enter the password</label></b></br>
+                <input type="text" id="password" placeholder="re-enter password" name="password"><br><br>
+                <label>gender:</label><br>
+                <input type="radio" name="act" value="one"/>Male
+                <input type="radio" name="act" value="two"/>female
+                <input type="radio" name="act" value="three"/>other<br><br><br>
+
+            <button type="button" onclick="validateForm()">SUBMIT</button>
+            <button type="reset" onclick="reset">CANCLE</button>
+        </form></td>
+        </tr>
+        </table>
+        <script>
+            function validateForm()
+            {
+                const name = document.getElementById("name").value;
+                const email = document.getElementById("email").value;
+                const phone = document.getElementById("phone").value;
+
+                if(name ==='' || email ==='' || phone ===''){
+                    alert("please fill out all required fields.");
+                }
+                else if(!validateEmail(email)){
+                    alert("invalid email format.");
+                }
+                else if(phone.length !== 10 || !/^\d+$/.test(phone)){
+                    alert("mobile number must be 10 digit long and contain only numbers.");
+                }
+                else{
+                    alert("Form submitted successfully");
+                }
+            }
+            function validateEmail(email){
+                const re =/\S+@\S+\.\S+/;
+                return re.test(email);
+            }
+        </script>
+        
+    </body>
+</html>
